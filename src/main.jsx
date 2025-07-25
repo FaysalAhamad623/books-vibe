@@ -10,7 +10,9 @@ import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import Home from './Components/Home/Home.jsx';
 import BookDetails from './Components/BookDetails/BookDetails.jsx';
 import ListedBooks from './ListedBooks/ListedBooks.jsx';
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import Login from './Login/Login.jsx';
+import Signup from './Signup/Signup.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,9 +36,18 @@ const router = createBrowserRouter([
 
       },
       {
-        path:"wishList",
-        element:<ListedBooks />
+        path: "wishList",
+        element: <ListedBooks />
       },
+      {
+        path:"logIn",
+        element:<Login></Login>
+      },
+      {
+        path:"signUp",
+        element:<Signup></Signup>
+      }
+      ,
 
       {
         path: "dashboard",
@@ -48,8 +59,11 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <div >
+      <RouterProvider router={router} />
       <ToastContainer />
+    </div>
+
 
   </StrictMode>,
 )
