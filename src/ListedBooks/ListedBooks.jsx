@@ -38,8 +38,8 @@ const ListedBooks = () => {
     if (activeTabIndex === 0) {
       // Sort Read List
       const sorted = [...originalReadBook];
-      if (sortType === 'ratings') sorted.sort((a, b) => a.rating - b.rating);
-      else if (sortType === 'number of pages') sorted.sort((a, b) => a.totalPages - b.totalPages);
+      if (sortType === 'ratings') sorted.sort((a, b) => b.rating - a.rating);
+      else if (sortType === 'number of pages') sorted.sort((a, b) => b.totalPages - a.totalPages);
       setReadbook(sorted);
     } else {
       // Sort Wish List
