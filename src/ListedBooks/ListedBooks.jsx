@@ -44,8 +44,8 @@ const ListedBooks = () => {
     } else {
       // Sort Wish List
       const sorted = [...originalWishBook];
-      if (sortType === 'ratings') sorted.sort((a, b) => a.rating - b.rating);
-      else if (sortType === 'number of pages') sorted.sort((a, b) => a.totalPages - b.totalPages);
+      if (sortType === 'ratings') sorted.sort((a, b) => b.rating - a.rating);
+      else if (sortType === 'number of pages') sorted.sort((a, b) => b.totalPages - a.totalPages);
       setWishBook(sorted);
     }
   }
@@ -58,9 +58,9 @@ const ListedBooks = () => {
         <div tabIndex={0} role="button" className="btn m-1">
           {sort ? `Sort by: ${sort}` : 'Sort by'}
         </div>
-        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-          <li onClick={() => handleSort("ratings")}><a>ratings</a></li>
-          <li onClick={() => handleSort("number of pages")}><a>number of pages</a></li>
+        <ul tabIndex={0} className="dropdown-content menu bg-base-100  z-1 w-52 p-2 shadow-sm">
+          <li onClick={() => handleSort("ratings")} className='bg-blue-600 hover:bg-white text-white text-sm my-2 rounded-sm'><a>ratings</a></li>
+          <li onClick={() => handleSort("number of pages")} className='bg-green-600  hover:bg-white text-white text-sm my-2 rounded-sm'><a>number of pages</a></li>
         </ul>
       </div>
 
